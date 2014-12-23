@@ -25,4 +25,9 @@ akka doc的结构：
    
 2. 从消息队列到handler是用pull还是push?
 
-   其实2和1是相应的：静态+push, 动态+pull.原因是：如果动态+push的话，消息队列也要知道，用户id对应哪个handler.
+   其实2和1是相应的：静态+push, 动态+pull.原因是：如果动态+push的话，消息队列也要知道，用户id对应哪个handler.如果这样设计的话，需要一个yellowpage，让消息队列知道往哪个handler推。
+   
+   如果要加yellowpage的话，要在queue和loadbalancer里加入addressbook的缓存，然后采取sub-pub的方式来更新addressbook的cache。
+   
+   
+   
