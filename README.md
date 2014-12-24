@@ -38,6 +38,9 @@ akka doc的结构：
 
    actorFor用的非常的多，要说到和actorSelection有什么不同，可能还需要更多的了解。   
 
+6. UntypedActor和TypedActor的不同在哪里？
+
+   
 
 工程应用的问题：（针对现在正在做的push）
 
@@ -54,6 +57,17 @@ akka doc的结构：
 3. 最终还是决定，采用动态分发+push+yellowpage的设计。
     
    最灵活，也是最终极的解决方案，当然编码要考虑的东西也相对多一点。
+   
+
+4. Actor和SocketIOServer的结合方式，还是有待验证的
+
+5. log怎么打，需要调研一下：用akka自带的，还是直接用log4j.
+
+6. 分布式系统要想清楚的问题：
+   1. 加机器时候怎么加
+   2. 减机器的时候怎么减
+   3. 一个机器down掉的情况，是否能够继续正常提供服务。
+   4. 一个机器down掉的情况，是否能够比较方便的恢复。
    
 
 明天任务：看cluster aware router的两个例子。
