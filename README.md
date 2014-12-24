@@ -68,7 +68,8 @@ akka doc的结构：
    2. 减机器的时候怎么减
    3. 一个机器down掉的情况，是否能够继续正常提供服务。
    4. 一个机器down掉的情况，是否能够比较方便的恢复。
-   
+
+7. 遇到问题：ActorRef不能通过message来传递，那么能做的，只有把handler和loadbalancer分别编号，存在yellowpage里
 
 明天任务：看cluster aware router的两个例子。
    
