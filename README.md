@@ -44,6 +44,8 @@ akka doc的结构：
 
 8. akka的Configuration怎么搞比较好？
 
+9. akka extensions的doc需要好好读一下
+
 
 工程应用的问题：（针对现在正在做的push）
 
