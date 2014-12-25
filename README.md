@@ -63,6 +63,8 @@ akka doc的结构：
 
 5. log怎么打，需要调研一下：用akka自带的，还是直接用log4j.
 
+   用akka自带的。
+
 6. 分布式系统要想清楚的问题：
    1. 加机器时候怎么加
    2. 减机器的时候怎么减
@@ -70,6 +72,17 @@ akka doc的结构：
    4. 一个机器down掉的情况，是否能够比较方便的恢复。
 
 7. 遇到问题：ActorRef不能通过message来传递，那么能做的，只有把handler和loadbalancer分别编号，存在yellowpage里
+
+8. 有意思的一个地方：为什么是从已经起来的actor注册到还刚起来的node中的actor中呢？
+   也就是说已经起来的actor监听到memberup,主动的注册到新起来的node。因为trigger其实是memberup消息。
+
+9. 还有一个问题，没有想清楚：client怎么样能很好的连接不同的loadbalancer?
+
+   现在能想到的方式，是做一个静态的配置文件接口，client去读配置文件，然后就知道去连接哪些lb了。
+   
+   还有方式，当然是直接上F5,这样的硬件的LB.
+
+   LVS的方式，怎么做呢？
 
 明天任务：看cluster aware router的两个例子。
    
