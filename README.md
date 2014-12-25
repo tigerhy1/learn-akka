@@ -83,6 +83,12 @@ akka doc的结构：
    还有方式，当然是直接上F5,这样的硬件的LB.
 
    LVS的方式，怎么做呢？
+   
+10. 一个设计上的问题，为什么还要handler这一层呢？或者说为什么要loadbalancer这一层呢？
+    直接硬件的LB, 分发到handler那里，不就搞定了？
+
+   答案是不行的，因为对于long polling来说，一个uid必须要对应于一个handler(这个handler保存了这个uid的登陆信息等).
+
 
 明天任务：看cluster aware router的两个例子。
    
