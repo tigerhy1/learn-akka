@@ -61,7 +61,9 @@ akka doc的结构：
    最灵活，也是最终极的解决方案，当然编码要考虑的东西也相对多一点。
    
 
-4. Actor和SocketIOServer的结合方式，还是有待验证的
+4. Actor和SocketIOServer的结合方式，还是有待验证的. 
+   
+   和这个类似的问题是，和rabbitmq怎么一起用。 进一步的话，想知道akka是怎样实现：都在一个逻辑线程里跑的？
 
 5. log怎么打，需要调研一下：用akka自带的，还是直接用log4j.
 
