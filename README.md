@@ -42,7 +42,8 @@ akka doc的结构：
 
 7. CurrentClusterState多久收到一次？或者说什么情况下会收到？
 
-   
+8. akka的Configuration怎么搞比较好？
+
 
 工程应用的问题：（针对现在正在做的push）
 
@@ -94,5 +95,13 @@ akka doc的结构：
    答案是不行的，因为对于long polling来说，一个uid必须要对应于一个handler(这个handler保存了这个uid的登陆信息等).
 
 
-明天任务：看cluster aware router的两个例子。
+明天任务：
+
+1. 看cluster aware router的两个例子。
+
+2.1 弄好Configuration
+2.2 rabbitmq
+2.3 处理MemberDown消息
+
+
    
