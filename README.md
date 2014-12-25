@@ -40,6 +40,8 @@ akka doc的结构：
 
 6. UntypedActor和TypedActor的不同在哪里？
 
+7. CurrentClusterState多久收到一次？或者说什么情况下会收到？
+
    
 
 工程应用的问题：（针对现在正在做的push）
