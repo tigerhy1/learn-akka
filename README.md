@@ -106,6 +106,10 @@ akka doc的结构：
 
 13. 花一定的时间去更深入的了解socketIO.long polling怎么生成client的？服务器这边怎么通过client推送消息到client的？
 
+14. 还是需要对比一下nginx做反向代理和自己写LB的架构的区别：
+
+    1. 好像nginx做反向代理的规则，是静态的。（待确认）
+    2. 自己写LB的话（并且socketIOServer放在LB上，而不是Handler上），中间状态维护起来要复杂不少。
 
 明天任务：
 
