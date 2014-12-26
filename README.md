@@ -46,6 +46,10 @@ akka doc的结构：
 
 9. akka extensions的doc需要好好读一下
 
+   configuration做成extensions,有什么好处？
+   
+10. actorOf里面的几个参数，是干什么的？
+
 
 工程应用的问题：（针对现在正在做的push）
 
@@ -95,6 +99,12 @@ akka doc的结构：
     直接硬件的LB, 分发到handler那里，不就搞定了？
 
    答案是不行的，因为对于long polling来说，一个uid必须要对应于一个handler(这个handler保存了这个uid的登陆信息等).
+
+11. 和rabbitmq的结合，现在用的是一个actor在不停轮询的方式。有没有reactive的方式呢？
+
+12. 机器down掉，可能没有办法自动重启了。如果只是某个actor挂掉了的话，重启的scenario是什么样子的？
+
+13. 花一定的时间去更深入的了解socketIO.long polling怎么生成client的？服务器这边怎么通过client推送消息到client的？
 
 
 明天任务：
