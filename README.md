@@ -115,6 +115,16 @@ akka doc的结构：
                                    
     2. 自己写LB的话（并且socketIOServer放在LB上，而不是Handler上），中间状态维护起来要复杂不少。
 
+15. 用户register的流程有几种选择，到底选哪种？
+
+    现在选择的方案是采用用户主动+rabbitmq主动的方式
+    
+16. workingQueue和yellowpage这两个服务怎么做？
+
+    workingQueue，会影响吞吐性能，考虑做平行的。
+    
+    yellowpage，不太影响吞吐，并且如果多于一个在发消息的话，会使系统设计变得复杂，考虑做主从。
+
 明天任务：
 
 1. 看cluster aware router的两个例子。
