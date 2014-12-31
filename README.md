@@ -81,6 +81,7 @@ akka doc的结构：
    2. 减机器的时候怎么减
    3. 一个机器down掉的情况，是否能够继续正常提供服务。
    4. 一个机器down掉的情况，是否能够比较方便的恢复。
+   5. 怎么样不停止服务的情况下，做升级。
 
 7. 遇到问题：ActorRef不能通过message来传递，那么能做的，只有把handler和loadbalancer分别编号，存在yellowpage里
 
@@ -124,6 +125,10 @@ akka doc的结构：
     workingQueue，会影响吞吐性能，考虑做平行的。
     
     yellowpage，不太影响吞吐，并且如果多于一个在发消息的话，会使系统设计变得复杂，考虑做主从。
+    
+17. 做出一个决定，去掉LB和YellowPage
+
+
 
 明天任务：
 
