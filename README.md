@@ -128,6 +128,8 @@ akka doc的结构：
     
 17. 做出一个决定，去掉LB和YellowPage
 
+18. 很多问题最后的指向是：socketio-netty怎么做重连？
+
 
 
 明天任务：
