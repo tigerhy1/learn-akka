@@ -130,7 +130,9 @@ akka doc的结构：
 
 18. 很多问题最后的指向是：socketio-netty怎么做重连？
 
+19. socketIOServer怎么检测出client的断线
 
+20. 怎样远程watch一个actor？
 
 明天任务：
 
@@ -139,6 +141,7 @@ akka doc的结构：
 2.1 弄好Configuration
 2.2 rabbitmq
 2.3 处理MemberDown消息
+
 
 
    
