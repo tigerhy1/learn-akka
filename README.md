@@ -134,6 +134,8 @@ akka doc的结构：
 
 20. 怎样远程watch一个actor？
 
+21. 弄清楚cluster中的member down，和远程的actor terminated之间有什么联系？
+
 明天任务：
 
 1. 看cluster aware router的两个例子。
