@@ -27,7 +27,62 @@
    也就是说同一个actor中变量的改变，不会有资源竞争的问题的。
       
       
-2. 一个简单的actor的例子
+2. 一个例子
+
+ 用synchronized方式：
+ 
+class BankAccount {
+  private var balance = 0
+  
+  def deposit(amount: Int): Unit =
+    if (amount > 0) balance = balance + amount
+
+  def withdraw(amount: Int): Int =
+    if (0 < amount && amount <= balance) {
+	  balance = balance - amount
+	  balance
+	} else throw new Error("insufficient funds")
+}
+
+这样会有资源竞争问题，导致数据不一致。 
+
+加上sychronized后：
+
+class BankAccount {
+  private var balance = 0
+  
+  def deposit(amount: Int): Unit = this.synchronized {
+    if (amount > 0) balance = balance + amount
+  }
+
+  def withdraw(amount: Int): Int = this.synchronized {
+    if (0 < amount && amount <= balance) {
+	  balance = balance - amount
+	  balance
+	} else throw new Error("insufficient funds")
+  }
+}
+
+转账：
+
+def transfer(from: BankAccount, to: BankAccount, amount: Int): Unit = {
+  from.synchronized {
+    to.synchronized {
+	  from.withdraw(amount)
+	  to.deposit(amount)
+	}
+  }
+}
+
+有DeadLock的问题：
+transfer(accountA, accountB, x) in one thread
+transfer(accountB, accountA, x) in another thread
+这两个同时执行会导致死锁，
+
+虽然有各种办法解决这个问题，比如总是按照顺序加锁，
+但会使代码变得非常复杂	
+
+ 
 
    A, B直接转账的经典例子
 
