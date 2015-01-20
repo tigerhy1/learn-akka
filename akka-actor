@@ -29,7 +29,8 @@
       
 2. 一个例子
 
- 用synchronized方式：
+ A, B直接转账的经典例子
+用synchronized方式：
  
 class BankAccount {
   private var balance = 0
@@ -63,12 +64,13 @@ class BankAccount {
   }
 }
 
-转账：
+转账：这个地方为什么要加锁？因为如果不加锁，其他线程在a点看的时候，会发现钱没有落地。
 
 def transfer(from: BankAccount, to: BankAccount, amount: Int): Unit = {
   from.synchronized {
     to.synchronized {
       from.withdraw(amount)
+      //a
       to.deposit(amount)
     }
   }
