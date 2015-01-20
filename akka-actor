@@ -84,7 +84,7 @@ transfer(accountB, accountA, x) in another thread
 
  
 
-   A, B直接转账的经典例子
+
 
 用actor的方式解决(scala):
 
