@@ -39,9 +39,9 @@ class BankAccount {
 
   def withdraw(amount: Int): Int =
     if (0 < amount && amount <= balance) {
-	  balance = balance - amount
-	  balance
-	} else throw new Error("insufficient funds")
+      balance = balance - amount
+      balance
+    } else throw new Error("insufficient funds")
 }
 
 这样会有资源竞争问题，导致数据不一致。 
@@ -57,9 +57,9 @@ class BankAccount {
 
   def withdraw(amount: Int): Int = this.synchronized {
     if (0 < amount && amount <= balance) {
-	  balance = balance - amount
-	  balance
-	} else throw new Error("insufficient funds")
+      balance = balance - amount
+      balance
+    } else throw new Error("insufficient funds")
   }
 }
 
@@ -68,9 +68,9 @@ class BankAccount {
 def transfer(from: BankAccount, to: BankAccount, amount: Int): Unit = {
   from.synchronized {
     to.synchronized {
-	  from.withdraw(amount)
-	  to.deposit(amount)
-	}
+      from.withdraw(amount)
+      to.deposit(amount)
+    }
   }
 }
 
