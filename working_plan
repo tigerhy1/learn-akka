@@ -1,3 +1,7 @@
 1. akka的prod的log
 
 2. 弄明白loadtest为什么会disconnect
+
+3. 认证的地方，需要有一个异步远程调用的东西，调研thrift
+
+4. socketio协议更深入的理解。
