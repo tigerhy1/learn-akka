@@ -1,0 +1,46 @@
+Socketio-netty是用netty做通信框架，实现了服务端的socketio协议。
+
+消息流：
+
+我为什么觉得channelPipeline中InPacketHandler的位置不对呀。位置是没问题的，因为它只处理一种特殊的message-PacketsMessage
+
+InPacketHandler
+
+AuthorizeHandler
+    如果HTTP params里没有带sid, 在这里会生成sessionId，并创建ClientHead
+
+入消息：InPacketHandler(通过PacketDecoder解析) -> PacketListener
+
+PacketEncoder 
+
+消息分流：
+
+NamespaceHub
+
+namespace和room并不是同一个概念
+
+
+Transport只有两种：WEBSOCKET, POLLING
+
+BaseMessage
+HttpMessage
+OutPacketMessage
+
+
+Packet
+
+
+协议升降级机制
+
+ack机制
+
+Namespace处理Event:
+EventEntry, DataListener
+
+SocketIOClient 和 ClientHead区别是什么
+
+GET, POST在PollingTransport里为什么做不同的处理？
+     好像只有POST是继续往后处理
+     GET方法的处理方式，只是
+
+Origin是什么？
